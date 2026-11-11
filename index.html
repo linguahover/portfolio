@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Abu Hanzala — Researcher in Deep Learning & Medical Image Analysis</title>
+<meta name="description" content="Personal academic portfolio of Abu Hanzala — researcher in deep learning, computer vision and medical image analysis."/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- Custom Cursor -->
+<div class="cursor-dot"></div>
+<div class="cursor-ring"></div>
+
+<!-- Loader -->
+<div class="loader" id="loader">
+  <div class="loader-inner">
+    <svg viewBox="0 0 100 100" class="loader-crest">
+      <circle cx="50" cy="50" r="46" fill="none" stroke="var(--gold)" stroke-width="1"/>
+      <circle cx="50" cy="50" r="38" fill="none" stroke="var(--gold)" stroke-width="0.5"/>
+      <text x="50" y="56" text-anchor="middle" fill="var(--gold)" font-family="Cormorant Garamond" font-size="22" font-style="italic">A H</text>
+    </svg>
+    <div class="loader-text">Loading Portfolio<span class="dots">...</span></div>
+  </div>
+</div>
+
+<!-- Animated Background -->
+<div class="bg-grid"></div>
+<canvas id="particles-canvas"></canvas>
+
+<!-- Navigation -->
+<nav class="navbar" id="navbar">
+  <div class="nav-container">
+    <a href="#home" class="nav-logo">
+      <span class="logo-mark">AH</span>
+      <span class="logo-text">Abu Hanzala</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#home" class="nav-link active"><span class="nav-num">01</span>Home</a></li>
+      <li><a href="#about" class="nav-link"><span class="nav-num">02</span>About</a></li>
+      <li><a href="#research" class="nav-link"><span class="nav-num">03</span>Research</a></li>
+      <li><a href="#publications" class="nav-link"><span class="nav-num">04</span>Publications</a></li>
+      <li><a href="#experience" class="nav-link"><span class="nav-num">05</span>Experience</a></li>
+      <li><a href="#projects" class="nav-link"><span class="nav-num">06</span>Projects</a></li>
+      <li><a href="#skills" class="nav-link"><span class="nav-num">07</span>Skills</a></li>
+      <li><a href="#contact" class="nav-link"><span class="nav-num">08</span>Contact</a></li>
+    </ul>
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="nav-progress"><div class="nav-progress-bar" id="navProgress"></div></div>
+</nav>
+
+<!-- HERO -->
+<section id="home" class="hero">
+  <div class="hero-bg-decor">
+    <div class="floating-shape shape-1"></div>
+    <div class="floating-shape shape-2"></div>
+    <div class="floating-shape shape-3"></div>
+  </div>
+  <div class="hero-container">
+    <div class="hero-left reveal">
+      <div class="hero-tag">
+        <span class="tag-dot"></span>
+        Ph.D. Aspirant · Bangladesh
+      </div>
+      <h1 class="hero-name">
+        <span class="name-line"><span class="letter-wrap">Abu</span></span>
+        <span class="name-line"><span class="letter-wrap accent">Hanzala</span></span>
+      </h1>
+      <div class="hero-subtitle">
+        <span class="typewriter" id="typewriter"></span><span class="cursor-blink">|</span>
+      </div>
+      <p class="hero-desc">
+        Researcher exploring the frontier of <em>deep learning</em>, <em>computer vision</em>, and
+        <em>medical image analysis</em>. Building CNN, GNN, and Vision Transformer architectures
+        for clinically deployable, trustworthy diagnostic systems.
+      </p>
+      <div class="hero-cta">
+        <a href="#research" class="btn btn-primary">
+          <span>Explore Research</span>
+          <i class="fas fa-arrow-right"></i>
+        </a>
+        <a href="#contact" class="btn btn-ghost">
+          <span>Get in Touch</span>
+          <i class="fas fa-envelope"></i>
+        </a>
+      </div>
+      <div class="hero-socials">
+        <a href="#" class="social-link" aria-label="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
+        <a href="#" class="social-link" aria-label="ResearchGate"><i class="fab fa-researchgate"></i></a>
+        <a href="#" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="mailto:abu15-4022@diu.edu.bd" class="social-link" aria-label="Email"><i class="fas fa-envelope"></i></a>
+      </div>
+    </div>
+    <div class="hero-right reveal">
+      <div class="hero-portrait">
+        <div class="portrait-frame">
+          <div class="portrait-inner">
+            <svg viewBox="0 0 200 200" class="portrait-svg">
+              <defs>
+                <linearGradient id="portraitGrad" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0%" stop-color="#1a2942"/>
+                  <stop offset="100%" stop-color="#6b1919"/>
+                </linearGradient>
+              </defs>
+              <circle cx="100" cy="100" r="98" fill="url(#portraitGrad)"/>
+              <circle cx="100" cy="100" r="92" fill="none" stroke="#c9a961" stroke-width="0.8"/>
+              <circle cx="100" cy="100" r="82" fill="none" stroke="#c9a961" stroke-width="0.4"/>
+              <text x="100" y="115" text-anchor="middle" fill="#c9a961" font-family="Cormorant Garamond" font-size="60" font-style="italic" font-weight="600">AH</text>
+              <path d="M 40 145 Q 100 165 160 145" fill="none" stroke="#c9a961" stroke-width="0.6"/>
+              <text x="100" y="175" text-anchor="middle" fill="#c9a961" font-family="Cormorant Garamond" font-size="8" letter-spacing="2">SCIENTIA · POTENTIA</text>
+            </svg>
+          </div>
+          <div class="rotating-ring">
+            <svg viewBox="0 0 300 300">
+              <defs>
+                <path id="circlePath" d="M 150,150 m -130,0 a 130,130 0 1,1 260,0 a 130,130 0 1,1 -260,0"/>
+              </defs>
+              <text font-family="JetBrains Mono" font-size="11" fill="var(--gold)" letter-spacing="4">
+                <textPath href="#circlePath">DEEP LEARNING · COMPUTER VISION · MEDICAL IMAGING · TRUSTWORTHY AI ·&nbsp;</textPath>
+              </text>
+            </svg>
+          </div>
+        </div>
+        <div class="stat-badges">
+          <div class="stat-badge">
+            <div class="stat-num" data-target="4">0</div>
+            <div class="stat-label">Journal Papers</div>
+          </div>
+          <div class="stat-badge">
+            <div class="stat-num" data-target="11">0</div>
+            <div class="stat-label">Under Review</div>
+          </div>
+          <div class="stat-badge">
+            <div class="stat-num" data-target="14">0</div>
+            <div class="stat-label">Peer Reviews</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-indicator">
+    <span>Scroll</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="section">
+  <div class="section-header reveal">
+    <div class="section-num">02</div>
+    <h2 class="section-title">About <em>Me</em></h2>
+    <div class="section-line"></div>
+  </div>
+  <div class="about-container">
+    <div class="about-text reveal">
+      <p class="lead">
+        I am an emerging researcher at the intersection of <strong>artificial intelligence</strong>
+        and <strong>medical imaging</strong>, driven by the pursuit of diagnostic systems that are
+        accurate, explainable, and robust to real-world distribution shift.
+      </p>
+      <p>
+        My work draws on convolutional networks, graph neural networks, and Vision Transformer
+        architectures — augmented by hybrid ensemble learning, self-supervised pretraining, and
+        unsupervised domain adaptation. I am equally invested in <em>explainable AI</em>,
+        <em>image forensics</em>, and <em>foundation models</em>, with the long-term goal of
+        translating research prototypes into clinically deployable tools.
+      </p>
+      <div class="education-card">
+        <div class="edu-icon"><i class="fas fa-university"></i></div>
+        <div class="edu-body">
+          <div class="edu-degree">B.Sc. in Computer Science and Engineering</div>
+          <div class="edu-school">Daffodil International University, Bangladesh</div>
+          <div class="edu-thesis">
+            <strong>Thesis:</strong> <em>“A Hybrid Approach for Cervical Cancer Detection: Combining D-CNN, Transfer Learning, and Ensemble Models”</em>
+          </div>
+          <div class="edu-meta">
+            <span><i class="fas fa-user-tie"></i> Supervisor: Md. Sadekur Rahman</span>
+            <span><i class="fas fa-calendar"></i> 2021 – 2025</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="about-side reveal">
+      <div class="interest-card">
+        <h3 class="interest-title"><i class="fas fa-microscope"></i> Research Interests</h3>
+        <ul class="interest-list">
+          <li><span>01</span>Deep Learning & Computer Vision</li>
+          <li><span>02</span>Medical Image Analysis</li>
+          <li><span>03</span>CNN · GNN · Vision Transformers</li>
+          <li><span>04</span>Hybrid & Ensemble Learning</li>
+          <li><span>05</span>Self-Supervised Learning</li>
+          <li><span>06</span>Unsupervised Domain Adaptation</li>
+          <li><span>07</span>Explainable AI & Image Forensics</li>
+          <li><span>08</span>Foundation Models & Trustworthy AI</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RESEARCH FOCUS -->
+<section id="research" class="section section-alt">
+  <div class="section-header reveal">
+    <div class="section-num">03</div>
+    <h2 class="section-title">Research <em>Focus</em></h2>
+    <div class="section-line"></div>
+  </div>
+  <div class="research-grid">
+    <div class="research-card reveal">
+      <div class="research-icon"><i class="fas fa-brain"></i></div>
+      <h3>Medical Image Analysis</h3>
+      <p>Building deep architectures for cancer detection, neuroimaging, and pathology — from cervical cancer to lung cancer classification and cerebellum disease diagnosis.</p>
+      <div class="research-tags">
+        <span>CNN</span><span>ViT</span><span>Ensemble</span>
+      </div>
+    </div>
+    <div class="research-card reveal">
+      <div class="research-icon"><i class="fas fa-network-wired"></i></div>
+      <h3>Graph & Transformer Learning</h3>
+      <p>Exploring GNN and Vision Transformer architectures with hybrid fusion strategies for structured medical data and volumetric imaging.</p>
+      <div class="research-tags">
+        <span>GNN</span><span>Transformers</span><span>Fusion</span>
+      </div>
+    </div>
+    <div class="research-card reveal">
+      <div class="research-icon"><i class="fas fa-shield-halved"></i></div>
+      <h3>Trustworthy & Explainable AI</h3>
+      <p>Grad-CAM, LIME, and image-forensics-driven interpretability to make black-box models accountable for clinical decision support.</p>
+      <div class="research-tags">
+        <span>Grad-CAM</span><span>LIME</span><span>Forensics</span>
+      </div>
+    </div>
+    <div class="research-card reveal">
+      <div class="research-icon"><i class="fas fa-arrows-rotate"></i></div>
+      <h3>Domain Adaptation</h3>
+      <p>Self-supervised pretraining and unsupervised domain adaptation for robust generalization under distribution shift across imaging modalities.</p>
+      <div class="research-tags">
+        <span>SSL</span><span>UDA</span><span>Robustness</span>
+      </div>
+    </div>
+    <div class="research-card reveal">
+      <div class="research-icon"><i class="fas fa-cube"></i></div>
+      <h3>Foundation Models</h3>
+      <p>Adapting large pretrained backbones and multi-branch fusion CNNs (e.g., EfficientNet-embedded) to specialized medical imaging tasks.</p>
+      <div class="research-tags">
+        <span>EfficientNet</span><span>Pretraining</span><span>Transfer</span>
+      </div>
+    </div>
+    <div class="research-card reveal">
+      <div class="research-icon"><i class="fas fa-magnifying-glass-chart"></i></div>
+      <h3>Image Forensics</h3>
+      <p>Error-level driven and forensic-enriched frameworks — applied from defect detection to disease classification with attention guidance.</p>
+      <div class="research-tags">
+        <span>ELA</span><span>Attention</span><span>QA</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PUBLICATIONS -->
+<section id="publications" class="section">
+  <div class="section-header reveal">
+    <div class="section-num">04</div>
+    <h2 class="section-title">Selected <em>Publications</em></h2>
+    <div class="section-line"></div>
+  </div>
+
+  <div class="pub-tabs reveal">
+    <button class="pub-tab active" data-tab="journal">Journal Articles</button>
+    <button class="pub-tab" data-tab="review">Under Review</button>
+    <button class="pub-tab" data-tab="conf">Conference</button>
+  </div>
+
+  <div class="pub-content" data-content="journal">
+    <div class="pub-item reveal">
+      <div class="pub-year">2026</div>
+      <div class="pub-body">
+        <div class="pub-title">An EfficientNet-embedded multi-branch fusion convolutional neural network for robust lung cancer classification</div>
+        <div class="pub-authors">Hanzala, A., Sarder, M. R., Rahman, M. S., & Ohidujjaman</div>
+        <div class="pub-venue"><i class="fas fa-book"></i> Neural Computing and Applications, 38(13), 547</div>
+        <div class="pub-tags"><span>Lung Cancer</span><span>EfficientNet</span><span>Multi-Branch Fusion</span></div>
+      </div>
+    </div>
+    <div class="pub-item reveal">
+      <div class="pub-year">2025</div>
+      <div class="pub-body">
+        <div class="pub-title">A hybrid approach for cervical cancer detection: Combining D-CNN, transfer learning, and ensemble models</div>
+        <div class="pub-authors">Hanzala, A., Akter, T., & Rahman, M. S.</div>
+        <div class="pub-venue"><i class="fas fa-book"></i> Array, 27, 100434</div>
+        <div class="pub-tags"><span>Cervical Cancer</span><span>D-CNN</span><span>Transfer Learning</span></div>
+      </div>
+    </div>
+    <div class="pub-item reveal">
+      <div class="pub-year">2025</div>
+      <div class="pub-body">
+        <div class="pub-title">NeuroFusion: A forensic-enriched ensemble framework for cerebellum disease classification</div>
+        <div class="pub-authors">Hanzala, A., Sajjad, M., Akter, T., Kaur, H., & Rahman, M. S.</div>
+        <div class="pub-venue"><i class="fas fa-book"></i> Neuroscience Informatics, 100251</div>
+        <div class="pub-tags"><span>Neuroimaging</span><span>Ensemble</span><span>Forensics</span></div>
+      </div>
+    </div>
+    <div class="pub-item reveal">
+      <div class="pub-year">2025</div>
+      <div class="pub-body">
+        <div class="pub-title">Error-level driven attention-guided ensemble models for accurate leather defect detection</div>
+        <div class="pub-authors">Hanzala, A., Sajjad, M., Akter, T., Kaur, H., & Rahman, M. S.</div>
+        <div class="pub-venue"><i class="fas fa-book"></i> Journal Article</div>
+        <div class="pub-tags"><span>Attention</span><span>Defect Detection</span><span>ELA</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="pub-content hidden" data-content="review">
+    <div class="review-grid">
+      <div class="review-item reveal">
+        <div class="review-venue">Medical Image Analysis</div>
+        <div class="review-status"><span class="status-dot"></span>Under Review</div>
+      </div>
+      <div class="review-item reveal">
+        <div class="review-venue">ACM Computing Survey</div>
+        <div class="review-status"><span class="status-dot"></span>Under Review</div>
+      </div>
+      <div class="review-item reveal">
+        <div class="review-venue">Cognitive Computation</div>
+        <div class="review-status"><span class="status-dot"></span>Under Review</div>
+      </div>
+      <div class="review-item reveal">
+        <div class="review-venue">Journal of Pathology Informatics</div>
+        <div class="review-status"><span class="status-dot"></span>Under Review</div>
+      </div>
+      <div class="review-item reveal">
+        <div class="review-venue">Emerging Science Journal</div>
+        <div class="review-status"><span class="status-dot"></span>Under Review</div>
+      </div>
+      <div class="review-item reveal">
+        <div class="review-venue">Brain Informatics</div>
+        <div class="review-status"><span class="status-dot"></span>Under Review</div>
+      </div>
+      <div class="review-item reveal">
+        <div class="review-venue">IEEE Trans. Medical Imaging</div>
+        <div class="review-status"><span class="status-dot"></span>Under Review</div>
+      </div>
+      <div class="review-item reveal">
+        <div class="review-venue">Insights into Imaging</div>
+        <div class="review-status"><span class="status-dot"></span>Under Review</div>
+      </div>
+      <div class="review-item reveal">
+        <div class="review-venue">Journal of Big Data</div>
+        <div class="review-status"><span class="status-dot"></span>Under Review</div>
+      </div>
+      <div class="review-item reveal">
+        <div class="review-venue">Engineering Applications of AI</div>
+        <div class="review-status"><span class="status-dot"></span>Under Review</div>
+      </div>
+      <div class="review-item reveal">
+        <div class="review-venue">+ 1 additional venue</div>
+        <div class="review-status"><span class="status-dot"></span>Under Review</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="pub-content hidden" data-content="conf">
+    <div class="pub-item reveal">
+      <div class="pub-year">2024</div>
+      <div class="pub-body">
+        <div class="pub-title">Deep learning-based Alzheimer's disease detection using 2D MRI images</div>
+        <div class="pub-authors">Hanzala, A., et al.</div>
+        <div class="pub-venue"><i class="fas fa-microphone-lines"></i> 15th Int. Conf. on Computing, Communication and Networking Technologies (ICCCNT), June 2024</div>
+        <div class="pub-tags"><span>Alzheimer</span><span>MRI</span><span>Deep Learning</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE TIMELINE -->
+<section id="experience" class="section section-alt">
+  <div class="section-header reveal">
+    <div class="section-num">05</div>
+    <h2 class="section-title">Academic <em>Experience</em></h2>
+    <div class="section-line"></div>
+  </div>
+  <div class="timeline">
+    <div class="timeline-item reveal">
+      <div class="timeline-dot"></div>
+      <div class="timeline-date">2025 – 2026</div>
+      <div class="timeline-card">
+        <div class="timeline-role">Course Instructor · CPC (Concept to Publication)</div>
+        <div class="timeline-org"><i class="fas fa-university"></i> Daffodil International University, Bangladesh</div>
+        <p>Guiding students from research ideation to peer-reviewed publication — mentoring on literature review, experiment design, manuscript writing, and journal submission.</p>
+      </div>
+    </div>
+    <div class="timeline-item reveal">
+      <div class="timeline-dot"></div>
+      <div class="timeline-date">2024 – 2025</div>
+      <div class="timeline-card">
+        <div class="timeline-role">Research Assistant</div>
+        <div class="timeline-org"><i class="fas fa-university"></i> Daffodil International University, Bangladesh</div>
+        <p>Research on deep learning architectures for medical image analysis — cervical cancer, lung cancer, neurodegenerative disease, and image forensics-enriched ensemble models.</p>
+      </div>
+    </div>
+    <div class="timeline-item reveal">
+      <div class="timeline-dot"></div>
+      <div class="timeline-date">Ongoing</div>
+      <div class="timeline-card">
+        <div class="timeline-role">Peer Reviewer</div>
+        <div class="timeline-org"><i class="fas fa-scroll"></i> International Journals & Conferences</div>
+        <p>Serving as reviewer for <em>Clinical & Experimental Obstetrics & Gynecology</em>, <em>Journal of Imaging Informatics in Medicine</em>, <em>Alpha Psychiatry</em>, <em>Neural Computing and Applications</em>, <em>Frontiers in Neuroscience</em>, <em>Frontiers in Medicine</em>, and <em>ICECCME 2026</em>.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" class="section">
+  <div class="section-header reveal">
+    <div class="section-num">06</div>
+    <h2 class="section-title">Selected <em>Projects</em></h2>
+    <div class="section-line"></div>
+  </div>
+  <div class="projects-grid">
+    <div class="project-card reveal">
+      <div class="project-num">01</div>
+      <div class="project-icon"><i class="fas fa-cube"></i></div>
+      <h3>EverI Protocol</h3>
+      <div class="project-meta">Blockchain · 2024 – Present</div>
+      <p>A blockchain-based protocol exploring decentralized trust primitives for verifiable digital interactions.</p>
+      <div class="project-tags"><span>Blockchain</span><span>Web3</span></div>
+    </div>
+    <div class="project-card reveal">
+      <div class="project-num">02</div>
+      <div class="project-icon"><i class="fas fa-stethoscope"></i></div>
+      <h3>DocNexa</h3>
+      <div class="project-meta">HealthTech Web · 2025 – Present</div>
+      <p>A doctor-finder platform connecting patients with qualified physicians through intelligent search and location-aware ranking.</p>
+      <div class="project-tags"><span>HealthTech</span><span>Web</span></div>
+    </div>
+    <div class="project-card reveal">
+      <div class="project-num">03</div>
+      <div class="project-icon"><i class="fas fa-language"></i></div>
+      <h3>LinguaHover</h3>
+      <div class="project-meta">NLP Tool · 2026 – Present</div>
+      <p>An in-browser translation tool that delivers contextual definitions and translations on hover, powered by lightweight NLP models.</p>
+      <div class="project-tags"><span>NLP</span><span>Browser Ext.</span></div>
+    </div>
+    <div class="project-card reveal">
+      <div class="project-num">04</div>
+      <div class="project-icon"><i class="fas fa-file-shield"></i></div>
+      <h3>Paper Integrity Scanner</h3>
+      <div class="project-meta">Research Integrity · 2026 – Present</div>
+      <p>A manuscript checking tool that surfaces integrity issues — from image duplication forensics to citation and structural quality checks.</p>
+      <div class="project-tags"><span>Forensics</span><span>Research Integrity</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills" class="section section-alt">
+  <div class="section-header reveal">
+    <div class="section-num">07</div>
+    <h2 class="section-title">Technical <em>Skills</em></h2>
+    <div class="section-line"></div>
+  </div>
+  <div class="skills-container">
+    <div class="skill-group reveal">
+      <h3 class="skill-title"><i class="fas fa-code"></i> Programming</h3>
+      <div class="skill-bars">
+        <div class="skill-bar"><div class="skill-label"><span>Python</span><span>95%</span></div><div class="skill-track"><div class="skill-fill" data-fill="95"></div></div></div>
+        <div class="skill-bar"><div class="skill-label"><span>MATLAB</span><span>80%</span></div><div class="skill-track"><div class="skill-fill" data-fill="80"></div></div></div>
+        <div class="skill-bar"><div class="skill-label"><span>SQL</span><span>75%</span></div><div class="skill-track"><div class="skill-fill" data-fill="75"></div></div></div>
+      </div>
+    </div>
+    <div class="skill-group reveal">
+      <h3 class="skill-title"><i class="fas fa-microchip"></i> Deep Learning Frameworks</h3>
+      <div class="skill-bars">
+        <div class="skill-bar"><div class="skill-label"><span>PyTorch</span><span>92%</span></div><div class="skill-track"><div class="skill-fill" data-fill="92"></div></div></div>
+        <div class="skill-bar"><div class="skill-label"><span>TensorFlow</span><span>90%</span></div><div class="skill-track"><div class="skill-fill" data-fill="90"></div></div></div>
+        <div class="skill-bar"><div class="skill-label"><span>Keras</span><span>90%</span></div><div class="skill-track"><div class="skill-fill" data-fill="90"></div></div></div>
+      </div>
+    </div>
+    <div class="skill-group reveal">
+      <h3 class="skill-title"><i class="fas fa-eye"></i> Computer Vision & XAI</h3>
+      <div class="skill-tags-cloud">
+        <span>Image Preprocessing</span>
+        <span>CNN</span>
+        <span>GNN</span>
+        <span>Vision Transformers</span>
+        <span>Grad-CAM</span>
+        <span>LIME</span>
+        <span>Ensemble Learning</span>
+        <span>Self-Supervised Learning</span>
+        <span>Domain Adaptation</span>
+      </div>
+    </div>
+    <div class="skill-group reveal">
+      <h3 class="skill-title"><i class="fas fa-chart-column"></i> Data Science & Analytics</h3>
+      <div class="skill-tags-cloud">
+        <span>NumPy</span>
+        <span>Pandas</span>
+        <span>Scikit-learn</span>
+        <span>Matplotlib</span>
+        <span>Seaborn</span>
+        <span>Power BI</span>
+        <span>Tableau</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="section">
+  <div class="section-header reveal">
+    <div class="section-num">08</div>
+    <h2 class="section-title">Get in <em>Touch</em></h2>
+    <div class="section-line"></div>
+  </div>
+  <div class="contact-container">
+    <div class="contact-left reveal">
+      <h3 class="contact-heading">Let's collaborate on <span>impactful research</span></h3>
+      <p>Open to Ph.D. opportunities, research collaborations, and conversations about medical AI, computer vision, and trustworthy machine learning.</p>
+      <div class="contact-info">
+        <a href="mailto:abu15-4022@diu.edu.bd" class="contact-item">
+          <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+          <div>
+            <div class="contact-label">Email</div>
+            <div class="contact-value">abu15-4022@diu.edu.bd</div>
+          </div>
+        </a>
+        <a href="tel:+8801792121981" class="contact-item">
+          <div class="contact-icon"><i class="fas fa-phone"></i></div>
+          <div>
+            <div class="contact-label">Phone</div>
+            <div class="contact-value">+880 1792 121 981</div>
+          </div>
+        </a>
+        <div class="contact-item">
+          <div class="contact-icon"><i class="fas fa-location-dot"></i></div>
+          <div>
+            <div class="contact-label">Location</div>
+            <div class="contact-value">Dhaka, Bangladesh</div>
+          </div>
+        </div>
+      </div>
+      <div class="contact-socials">
+        <a href="#" class="c-social"><i class="fas fa-graduation-cap"></i> Google Scholar</a>
+        <a href="#" class="c-social"><i class="fab fa-researchgate"></i> ResearchGate</a>
+        <a href="#" class="c-social"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
+      </div>
+    </div>
+    <div class="contact-right reveal">
+      <form class="contact-form" id="contactForm" onsubmit="return handleSubmit(event)">
+        <div class="form-row">
+          <div class="form-group">
+            <input type="text" id="name" required>
+            <label for="name">Your Name</label>
+            <span class="form-line"></span>
+          </div>
+          <div class="form-group">
+            <input type="email" id="email" required>
+            <label for="email">Your Email</label>
+            <span class="form-line"></span>
+          </div>
+        </div>
+        <div class="form-group">
+          <input type="text" id="subject" required>
+          <label for="subject">Subject</label>
+          <span class="form-line"></span>
+        </div>
+        <div class="form-group">
+          <textarea id="message" rows="5" required></textarea>
+          <label for="message">Your Message</label>
+          <span class="form-line"></span>
+        </div>
+        <button type="submit" class="btn btn-primary form-submit">
+          <span>Send Message</span>
+          <i class="fas fa-paper-plane"></i>
+        </button>
+        <div class="form-status" id="formStatus"></div>
+      </form>
+    </div>
+  </div>
+
+  <div class="reference-card reveal">
+    <div class="ref-label"><i class="fas fa-quote-left"></i> Academic Reference</div>
+    <div class="ref-name">Md. Sadekur Rahman</div>
+    <div class="ref-role">Assistant Professor, Daffodil International University</div>
+    <a href="mailto:sadekur.cse@daffodilvarsity.edu.bd" class="ref-email">sadekur.cse@daffodilvarsity.edu.bd</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-left">
+      <div class="footer-logo">AH</div>
+      <div>
+        <div class="footer-name">Abu Hanzala</div>
+        <div class="footer-tag">Researcher · Deep Learning · Medical Imaging</div>
+      </div>
+    </div>
+    <div class="footer-right">
+      <div class="footer-copy">© <span id="year"></span> Abu Hanzala. Crafted with rigor and curiosity.</div>
+      <a href="#home" class="back-top" aria-label="Back to top"><i class="fas fa-arrow-up"></i></a>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
